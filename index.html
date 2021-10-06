@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- https://baitap-ui-js.vercel.app/ -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập DOM</title>
+
+    <!-- Boot Strap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Main StyleSheet -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <main class="container mt-5 calculator">
+        <div class="row">
+            <div class="col-2 left__side">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="baitap_1" data-toggle="pill" href="#pill_1" role="tab" aria-controls="pill_1" aria-selected="true">Bài 1</a>
+                <a class="nav-link" id="baitap_2" data-toggle="pill" href="#pill_2" role="tab" aria-controls="pill_2" aria-selected="false">Bài 2</a>
+                <a class="nav-link" id="baitap_3" data-toggle="pill" href="#pill_3" role="tab" aria-controls="pill_3" aria-selected="false">Bài 3</a>
+                <a class="nav-link" id="baitap_4" data-toggle="pill" href="#pill_4" role="tab" aria-controls="pill_4" aria-selected="false">Bài 4</a>
+                <a class="nav-link" id="baitap_5" data-toggle="pill" href="#pill_5" role="tab" aria-controls="pill_5" aria-selected="false">Bài 5</a>
+              </div>
+            </div>
+            <div class="col-10 right__side">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="pill_1" role="tabpanel" aria-labelledby="baitap_1">
+                    <h2>💰 Tính tiền lương nhân viên</h2>
+                    <div class="hint">
+                        <h3>💡Gợi ý:</h3>
+                        <p>Công thức: Lương = Lương 1 ngày * số ngày làm</p>
+                        <p>Kiến thức áp dụng:
+                            <ul>
+                                <li>Tìm tới thẻ và lấy giá trị</li>
+                                <li>Tạo hàm cơ bản</li>
+                                <li>Gắn sự kiện click cho button</li>
+                                <li>Thay đổi nội dung cho thẻ</li>
+                                <li>Xử lý load trang với button của form</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <form action="#">
+                        <input type="number" id="inputNum1" placeholder="Nhập lương một ngày">
+                        <input type="number" id="inputNum2" placeholder="Số ngày làm">
+                        <br>
+                        <button class="btn btn-primary" type="button" id="btnSalary">Tính lương</button>
+                        <div class="alert alert-success" role="alert">
+                            👉<span id="txtSalary"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pill_2" role="tabpanel" aria-labelledby="baitap_2">
+                    <h2>📚 Tính giá trị trung bình</h2>
+                    <div class="hint">
+                        <h3>💡Gợi ý:</h3>
+                        <p>Kiến thức áp dụng:
+                            <ul>
+                                <li>Tìm tới thẻ và lấy giá trị</li>
+                                <li>Tạo hàm cơ bản</li>
+                                <li>Gắn sự kiện click cho button</li>
+                                <li>Thay đổi nội dung cho thẻ</li>
+                                <li>Xử lý load trang với button của form</li>
+                                <li> Xử lý ép kiểu dữ liệu</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <form action="#">
+                        <input type="number" id="n1_priceAvg" placeholder="Nhập số thứ 1">
+                        <input type="number" id="n2_priceAvg" placeholder="Nhập số thứ 2">
+                        <input type="number" id="n3_priceAvg" placeholder="Nhập số thứ 3">
+                        <br>
+                        <input type="number" id="n4_priceAvg" placeholder="Nhập số thứ 4">
+                        <input type="number" id="n5_priceAvg" placeholder="Nhập số thứ 5">
+                        <br>
+                        <button class="btn btn-primary" type="button" id="btnPriceAvg">Tính trung bình</button>
+                        <div class="alert alert-success" role="alert">
+                            👉<span id="txtPriceAvg"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pill_3" role="tabpanel" aria-labelledby="baitap_3">
+                    <h2>💱 Quy đổi tiền</h2>
+                    <div class="hint">
+                        <h3>💡Gợi ý:</h3>
+                        <p>Kiến thức áp dụng:
+                            <ul>
+                                <li>Áp dụng các kiến thức như bài 1 và 2</li>
+                                <li>Giá USD mặc định 1 USD = 23500</li>
+                                <li>Có thể dùng thêm NumberFormat để số tiền hiển thị đẹp hơn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat">NumberFormat</a></li>
+                                <li>VD: new Intl.NumberFormat('vn-VN').format(23500); => 23,500</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <form action="#">
+                        <input type="number" id="n1_USDtoVND" placeholder="Nhập số tiền USD">
+                        <br>
+                        <button class="btn btn-primary" type="button" id="btnUSDtoVND">Quy đổi tiền</button>
+                        <div class="alert alert-success" role="alert">
+                            👉<span id="txtUSDtoVND"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pill_4" role="tabpanel" aria-labelledby="baitap_4">
+                    <h2>📏 Tính diện tích, chu vi hình chữ nhật</h2>
+                    <div class="hint">
+                        <h3>💡Gợi ý:</h3>
+                        <p>Kiến thức áp dụng:
+                            <ul>
+                                <li>Áp dụng các kiến thức như các bài trước</li>
+                                <li>Diện tích: dài x rộng</li>
+                                <li>Chu vi: (dài + rộng) x 2</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <form action="#">
+                        <input type="number" id="n1_length" placeholder="Nhập chiều dài">
+                        <input type="number" id="n2_width" placeholder="Nhập chiều rộng">
+                        <br>
+                        <button class="btn btn-primary" type="button" id="btnArea_Perimeter">Tính</button>
+                        <div class="alert alert-success" role="alert">
+                            👉<span id="txtArea_Perimeter"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pill_5" role="tabpanel" aria-labelledby="baitap_5">
+                    <h2>🧮 Tính tổng 2 ký số</h2>
+                    <div class="hint">
+                        <h3>💡Gợi ý:</h3>
+                        <p>Kiến thức áp dụng:
+                            <ul>
+                                <li>Áp dụng cách tính như demo tổng 3 ký số trên lớp</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <form action="#">
+                        <input type="number" id="n1_sum" placeholder="Nhập số có 2 chữ số">
+                        <br>
+                        <button onClick="tinhTong()"  class="btn btn-primary" type="button" id="btnSum">Tính tổng</button>
+                        <div class="alert alert-success" role="alert">
+                            👉<span id="txtSum"></span>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
+</body>
+
+    <!-- Boot Strap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Main Js -->
+    <script src="./js/main.js"></script>
+</html>
